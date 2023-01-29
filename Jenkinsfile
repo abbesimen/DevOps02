@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Récupération du code source') {
             steps {
-                git 'https://github.com/[username]/[repository].git'
+                git 'https://github.com/hatembensalh/abbesimen/DevOps02.git'
             }
         }
         stage('Affichage de la date système') {
