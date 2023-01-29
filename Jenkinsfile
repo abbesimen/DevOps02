@@ -15,5 +15,10 @@ pipeline {
                 sh 'date'
             }
         }
+        stage('Construction du livrable') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
     }
 }
