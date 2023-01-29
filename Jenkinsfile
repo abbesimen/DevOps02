@@ -5,5 +5,5 @@ stage('checkout GIT){
 steps{
 echo 'Pulling ...';
 git branch:'hatem',
-url :'https://github.com/abbesimen/DevOps02.git';
+url :'https://github.com/abbesimen/DevOps02.git'
 }}}}
