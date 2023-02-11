@@ -30,6 +30,10 @@ pipeline {
                 sh 'mvn compliler:compile'
             }
         }
-       
+        stage('Maven SONARQUBE') {
+            steps {
+                sh 'mvn sonar:sonar'
+            }
+        }
     }
 }
