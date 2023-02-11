@@ -15,11 +15,7 @@ pipeline {
                 sh 'date'
             }
         }
-         stage('Maven Clean') {
-            steps {
-                sh 'mvn clean'
-            }
-        }
+       
          stage('Maven Compile') {
             steps {
                 sh 'mvn clean package'
