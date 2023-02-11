@@ -15,9 +15,19 @@ pipeline {
                 sh 'date'
             }
         }
-         stage('Construction du livrable') {
+         stage('Maven Clean') {
+            steps {
+                sh 'mvn clean'
+            }
+        }
+         stage('Maven Compile') {
             steps {
                 sh 'mvn clean package'
+            }
+        }
+         stage('Construction du livrable') {
+            steps {
+                sh 'mvn compliler:compile'
             }
         }
        
