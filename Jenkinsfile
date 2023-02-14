@@ -32,7 +32,7 @@ pipeline {
         }
           stage('Run Tests') {
             steps {
-                sh 'mvn clean test'
+                sh 'mvn test -DskipTests=false'
             }
         }
         stage('Maven SONARQUBE') {
