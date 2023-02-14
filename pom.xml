@@ -41,6 +41,7 @@
 			<version>5.1.46</version>
 		</dependency>
 		<dependency>
+
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -78,11 +79,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-ressources-plugin</artifactId>
-				<version> 3.1.0 </version>
-			</plugin>
+
 		</plugins>
 	</build>
 
