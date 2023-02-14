@@ -9,6 +9,7 @@ import java.util.Optional;
 import com.esprit.examen.services.CategorieProduitServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -18,7 +19,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 import com.esprit.examen.entities.CategorieProduit;
 import com.esprit.examen.repositories.CategorieProduitRepository;
 @RunWith(MockitoJUnitRunner.class)
-
 public class CategorieProduitServiceImplTest {
 
     @InjectMocks
