@@ -32,12 +32,12 @@ pipeline {
         }
          stage('Construction du livrable') {
             steps {
-                sh 'mvn compiler:compile'
+                sh 'mvn compiler:compile '
             }
         }
         stage('Maven SONARQUBE') {
             steps {
-                sh 'mvn sonar:sonar'
+                sh 'mvn sonar:sonar -Dsonar.login=admin1 -Dsonar.password=admin1'
             }
         }
     }
