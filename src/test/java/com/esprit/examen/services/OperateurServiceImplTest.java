@@ -1,7 +1,8 @@
 package com.esprit.examen.services;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -11,14 +12,19 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import com.esprit.examen.entities.Operateur;
 import com.esprit.examen.repositories.OperateurRepository;
+import org.mockito.junit.MockitoJUnitRunner;
+
+@RunWith(MockitoJUnitRunner.class)
 
 public class OperateurServiceImplTest {
 
@@ -28,8 +34,8 @@ public class OperateurServiceImplTest {
     @InjectMocks
     private OperateurServiceImpl operateurService;
 
-    @BeforeEach
-    void setUp() throws Exception {
+    @Before
+   public void setUp() throws Exception {
         MockitoAnnotations.openMocks(this);
     }
 

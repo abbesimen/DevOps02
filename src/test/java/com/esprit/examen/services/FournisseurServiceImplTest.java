@@ -1,8 +1,8 @@
 package com.esprit.examen.services;
+import static org.junit.Assert.assertEquals;
 
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -12,8 +12,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -25,6 +26,9 @@ import com.esprit.examen.repositories.DetailFournisseurRepository;
 import com.esprit.examen.repositories.FournisseurRepository;
 import com.esprit.examen.repositories.ProduitRepository;
 import com.esprit.examen.repositories.SecteurActiviteRepository;
+import org.mockito.junit.MockitoJUnitRunner;
+
+@RunWith(MockitoJUnitRunner.class)
 
 public class FournisseurServiceImplTest {
 
