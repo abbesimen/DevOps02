@@ -16,7 +16,7 @@ pipeline {
             }
             stage('BUILD') {
                 steps{
-                    sh 'mvn -f DevOps02/pom.xml clean install'
+                    sh 'mvn clean install'
                 }
             }
         }
