@@ -1,1 +1,23 @@
-
+pipeline {
+        
+        agent any
+        environment {
+            PATH = "/usr/share/maven/bin:$PATH"
+        }
+        stages {
+            stage('CHECKOUT GIT') {
+                
+                steps{
+                    echo 'Pulling...';
+                    git branch: 'main',
+                    url: 'https://github.com/abbesimen/DevOps02.git',
+                    credentialsId: 'bb840cc3-050a-46bf-9192-5b10b5e2fc36';
+                }
+            }
+            stage('BUILD') {
+                steps{
+                    sh 'mvn -f DevOps02/pom.xml clean install'
+                }
+            }
+        }
+    }
