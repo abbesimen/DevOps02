@@ -17,6 +17,16 @@ pipeline {
               sh "ls -ltr"
           }
         }
+           stage('maven version') {
+            steps {
+                sh 'mvn -version'
+            }
+        }
+         stage('Maven Clean') {
+            steps {
+                sh 'mvn clean'
+            }
+        }
            stage('Build') {
             steps {
                 sh 'mvn clean install'
