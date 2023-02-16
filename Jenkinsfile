@@ -1,16 +1,10 @@
 pipeline {
     agent any
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout([$class: 'GitSCM', branches: [[name: 'imen']], userRemoteConfigs: [[url: 'https://github.com/abbesimen/DevOps02.git']]])
-            }
-        }
-        tools { 
+     tools { 
         maven 'Maven 3.9.0' 
            }
-    stages {
-        stage ('Initialize') {
+    stages {          
+          stage ('Initialize') {
             steps {
                 sh '''
                     echo "PATH = ${PATH}"
@@ -18,7 +12,11 @@ pipeline {
                 ''' 
             }
         }
-
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: 'imen']], userRemoteConfigs: [[url: 'https://github.com/abbesimen/DevOps02.git']]])
+            }
+        }
         stage('Clean checkout et Contenu repetoire ') {
             steps {
               checkout([$class: 'GitSCM', 
