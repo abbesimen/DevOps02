@@ -19,23 +19,23 @@ pipeline {
         }
            stage('maven version') {
             steps {
-                sh 'mvn -version'
+                sh 'mvn-3.9.0 -version'
             }
         }
          stage('Maven Clean') {
             steps {
-                sh 'mvn clean'
+                sh 'mvn-3.9.0 clean'
             }
         }
            stage('Build') {
             steps {
-                sh 'mvn clean install'
+                sh 'mvn-3.9.0 clean install'
                 sh "cat target/maven-compiler-plugin.log"
             }
         }
         stage('Unit Tests') {
             steps {
-                sh 'mvn test'
+                sh 'mvn-3.9.0 test'
             }
         }
         stage('SonarQube Analysis') {
