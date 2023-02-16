@@ -19,12 +19,12 @@ pipeline {
         }
            stage('maven version') {
             steps {
-                sh 'mvn-3.9.0 -version'
+                sh 'mvn -version'
             }
         }
          stage('Maven Clean') {
             steps {
-                sh 'mvn-3.9.0 clean'
+                sh 'mvn clean'
             }
         }
            stage('Build') {
