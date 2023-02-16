@@ -1,7 +1,7 @@
 pipeline {
     agent any
      triggers {
-        pollSCM('H/5 * * * *')
+        pollSCM('0 4 * * *')
     }
     stages {
         stage('checkout GIT') {
