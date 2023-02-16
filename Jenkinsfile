@@ -1,18 +1,13 @@
 pipeline {
     agent any
+     triggers {
+        pollSCM('H/5 * * * *')
+    }
      tools { 
         maven 'Maven 3.9.0' 
            }
     stages {          
-          stage ('Initialize') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
-            }
-        }
-        stage('Checkout') {
+         stage('Checkout') {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: 'imen']], userRemoteConfigs: [[url: 'https://github.com/abbesimen/DevOps02.git']]])
             }
