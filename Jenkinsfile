@@ -20,6 +20,7 @@ pipeline {
            stage('Build') {
             steps {
                 sh 'mvn clean install'
+                sh "cat target/maven-compiler-plugin.log"
             }
         }
         stage('Unit Tests') {
