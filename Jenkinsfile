@@ -6,7 +6,18 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: 'imen']], userRemoteConfigs: [[url: 'https://github.com/abbesimen/DevOps02.git']]])
             }
         }
-        stage('Build') {
+        stage('Clean checkout et Contenu repetoire ') {
+            steps {
+              checkout([$class: 'GitSCM', 
+                branches: [[name: '*/imen']],
+                doGenerateSubmoduleConfigurations: false,
+                extensions: [[$class: 'CleanCheckout']],
+                submoduleCfg: [], 
+                userRemoteConfigs: [[url: 'https://github.com/abbesimen/DevOps02.git']]])
+              sh "ls -ltr"
+          }
+        }
+           stage('Build') {
             steps {
                 sh 'mvn clean package'
             }
