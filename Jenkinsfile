@@ -29,8 +29,7 @@ pipeline {
         }
            stage('Build') {
             steps {
-                sh 'mvn-3.9.0 clean install'
-                sh "cat target/maven-compiler-plugin.log"
+                sh 'mvn clean package'
             }
         }
         stage('Unit Tests') {
