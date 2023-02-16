@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/abbesimen/DevOps02.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/imen']], userRemoteConfigs: [[url: 'https://github.com/abbesimen/DevOps02.git']]])
             }
         }
         stage('Build') {
