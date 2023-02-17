@@ -42,7 +42,7 @@ pipeline {
         }
         stage('Maven SONARQUBE') {
             steps {
-                sh 'mvn sonar:sonar -Dsonar.login=8008da11b8e30f30c81af31aa112b4160bf2f294 -Dsonar.ws.timeout=900000'
+                sh 'mvn sonar:sonar -Dsonar.login=07e4177ab9a79dcd0f36c7bcd0df09f5b045c936 -Dsonar.ws.timeout=900000'
             }
         }
     }
