@@ -10,21 +10,18 @@ pipeline {
                 git branch: 'hatem', url: 'https://github.com/abbesimen/DevOps02.git'
             }
         }
-         stage('maven version') {
-            steps {
-                sh 'mvn -version'
-            }
-        }
+        
          stage('Maven Clean') {
             steps {
                 sh 'mvn clean'
             }
         }
-       stage('Maven Compile') {
+         stage('Maven Install') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn install'
             }
         }
+     
          stage('Compile') {
             steps {
                 sh 'mvn compiler:compile '
@@ -42,7 +39,7 @@ pipeline {
         }
         stage('Maven SONARQUBE') {
             steps {
-                sh 'mvn sonar:sonar -Dsonar.login=07e4177ab9a79dcd0f36c7bcd0df09f5b045c936 -Dsonar.ws.timeout=900000'
+                sh 'mvn sonar:sonar -Dsonar.login=cbdd1558e9de68ea4c69908461e3447cfc0819af -Dsonar.ws.timeout=900000'
             }
         }
     }
