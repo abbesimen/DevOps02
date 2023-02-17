@@ -25,9 +25,14 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-         stage('Construction du livrable') {
+         stage('Compile') {
             steps {
                 sh 'mvn compiler:compile '
+            }
+        }
+          stage('Construction du livrable') {
+            steps {
+                sh 'mvn package '
             }
         }
           stage('Run Tests') {
