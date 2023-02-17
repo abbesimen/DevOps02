@@ -32,9 +32,14 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+        stage('livrable') {
+            steps {
+                sh 'mvn compiler:compile '
+            }
+        }
         stage('Unit Tests') {
             steps {
-                sh 'mvn-3.9.0 test'
+                sh 'mvn test -DskipTests=false'
             }
         }
         stage('SonarQube Analysis') {
