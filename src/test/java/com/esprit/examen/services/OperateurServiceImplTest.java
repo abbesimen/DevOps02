@@ -21,7 +21,7 @@ import com.esprit.examen.repositories.OperateurRepository;
 public class OperateurServiceImplTest {
 	
 	@InjectMocks
-	OperateurService operateurService;
+	IOperateurService operateurService;
 	
 	@Mock
 	OperateurRepository operateurRepository;
@@ -57,4 +57,26 @@ public class OperateurServiceImplTest {
 		assertEquals("Operateur 1", operateurResult.getNom());
 		verify(operateurRepository, times(1)).findById(1L);
 	}
+	@Test
+	public void testUpdateOperateur() {
+	Operateur operateur = new Operateur(1L, "Operateur 1", "11111111");
+	
+	when(operateurRepository.save(operateur)).thenReturn(operateur);
+	
+	Operateur operateurResult = operateurService.updateOperateur(operateur);
+	
+	assertEquals("Operateur 1", operateurResult.getNom());
+	verify(operateurRepository, times(1)).save(operateur);
+}
+
+	@Test
+	public void testDeleteOperateur() {
+	Operateur operateur = new Operateur(1L, "Operateur 1", "11111111");
+	
+	when(operateurRepository.findById(1L)).thenReturn(Optional.of(operateur));
+	
+	operateurService.deleteOperateur(1L);
+	
+	verify(operateurRepository, times(1)).deleteById(1L);
+}
 }
